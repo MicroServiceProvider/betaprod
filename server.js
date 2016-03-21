@@ -19,7 +19,7 @@ app.use(bodyParser.json())
 app.use(passport.initialize())
 app.use(token.initialize(passport, {secret: '120casd!CASC2@42149-&2asc20'}))
 
-let port = 80
+app.set('port', (process.env.PORT || 3001));
 
 if (app.get('env') === 'development') {
     // Configure webpack
@@ -30,9 +30,6 @@ if (app.get('env') === 'development') {
     const compiler = webpack(webpackConfig)
     app.use(webpackDevMiddleware(compiler, {noInfo: true, publicPath: webpackConfig.output.publicPath}))
     app.use(webpackHotMiddleware(compiler))
-
-    // Set dev port
-    port = 3001
 }
 
 // Serve all files from public directory
@@ -49,7 +46,7 @@ function serveIndex(req, res) {
 app.get('/post', serveIndex)
 
 // Start app
-app.listen(port, function () {
-    logger.info(`Running in ${app.get('env')} mode on port ${port}`)
+app.listen(app.get('port'), function () {
+    logger.info(`Running in ${app.get('env')} mode on port ${app.get('port')}`)
 })
 

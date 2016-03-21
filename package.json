@@ -4,7 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "webpack --progress --colors",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -31,12 +33,12 @@
     "passport-strategy": "^1.0.0",
     "style-loader": "^0.13.0",
     "thinky": "^2.2.6",
+    "raw-loader": "^0.5.1",
     "webpack": "^1.12.14",
     "webpack-dev-middleware": "^1.5.1",
     "webpack-hot-middleware": "^2.10.0",
     "winston": "^2.2.0"
   },
   "devDependencies": {
-    "raw-loader": "^0.5.1"
   }
 }
