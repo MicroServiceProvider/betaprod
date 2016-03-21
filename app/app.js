@@ -19,13 +19,13 @@ require('./post/PostController')(app)
 app.config(['$stateProvider', '$urlRouterProvider','$locationProvider',
     function($stateProvider, $urlRouterProvider, $locationProvider) {
         $locationProvider.html5Mode(true)
-        $urlRouterProvider.otherwise("/")
+        $urlRouterProvider.otherwise('/')
 
         $stateProvider.state('feed', {
             url:'/',
             template: require('./feed/feed.html'),
             controller: 'FeedController'
-         }).state('post', {
+        }).state('post', {
             url:'/post',
             template: require('./post/post.html'),
             controller: 'PostController'

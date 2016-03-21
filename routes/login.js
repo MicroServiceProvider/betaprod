@@ -20,13 +20,13 @@ passport.use(new FacebookStrategy({
     profileFields:['id', 'displayName', 'email','first_name','last_name']
 }, function(accessToken, refreshToken, profile, done) {
 
-    User.getAll(["facebook", profile.id], {index: 'provider_providerId'}).run().then(users => {
+    User.getAll(['facebook', profile.id], {index: 'provider_providerId'}).run().then(users => {
         if(users.length == 0) {
             // new user
             logger.info(`New facebook user ${profile.name.givenName} ${profile.name.familyName} ${profile.emails[0].value}`)
             return User.save({
                 providerId: profile.id,
-                provider: "facebook",
+                provider: 'facebook',
                 firstName: profile.name.givenName,
                 lastName: profile.name.familyName,
                 email: profile.emails[0].value

@@ -1,6 +1,6 @@
 const config = require('./config')
-const thinky = require('thinky')(config);
-const type = thinky.type;
+const thinky = require('thinky')(config)
+const type = thinky.type
 
 const User = thinky.createModel('User', {
     id: type.string(),

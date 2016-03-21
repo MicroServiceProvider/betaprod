@@ -19,8 +19,7 @@ app.use(bodyParser.json())
 app.use(passport.initialize())
 app.use(token.initialize(passport, {secret: '120casd!CASC2@42149-&2asc20'}))
 
-app.set('port', (process.env.PORT || 3001));
-
+app.set('port', (process.env.PORT || 3001))
 if (app.get('env') === 'development') {
     // Configure webpack
     const webpack = require('webpack')
@@ -49,4 +48,3 @@ app.get('/post', serveIndex)
 app.listen(app.get('port'), function () {
     logger.info(`Running in ${app.get('env')} mode on port ${app.get('port')}`)
 })
-
