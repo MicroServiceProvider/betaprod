@@ -36,3 +36,5 @@ node_modules
 public/bundle.js
 public/style.css
 
+# IDE fils
+.idea
