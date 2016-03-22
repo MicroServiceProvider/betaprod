@@ -14,6 +14,7 @@ let app = angular.module('app', [router, material, animate, aria, messages])
 // Registering controllers
 require('./feed/FeedController')(app)
 require('./post/PostController')(app)
+require('./product/ProductController')(app)
 
 // Configure routes
 app.config(['$stateProvider', '$urlRouterProvider','$locationProvider',
@@ -29,6 +30,10 @@ app.config(['$stateProvider', '$urlRouterProvider','$locationProvider',
             url:'/post',
             template: require('./post/post.html'),
             controller: 'PostController'
+        }).state('product', {
+            url:'/product/:id',
+            template: require('./product/product.html'),
+            controller: 'ProductController'
         })
     }])
 
