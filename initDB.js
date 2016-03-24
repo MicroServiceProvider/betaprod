@@ -10,7 +10,11 @@ then(() => User.save({
         lastName: 'Somech',
         email:'doron.somech@gmail.com',
         provider:'facebook',
-        providerId: '10153767634642935'
+        providerId: '10153767634642935',
+        photo: 'https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xpf1/v/t1.0-1/' +
+                'c15.0.50.50/p50x50/1898277_10152087626002935_1784615372_n.jpg?' +
+                'oh=2f810b7e1581100b41b014904f94981c&oe=577BB0E6&__gda__=' +
+                '1467753118_6de4d49eef388f505aa5e1da5cef22c8'
     })).
 then(user =>
     Product.save({
