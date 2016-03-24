@@ -50,5 +50,5 @@ app.get('/product/:id', serveIndex)
 
 // Start app
 app.listen(app.get('port'), function () {
-    logger.info(`Running in ${app.get('env')} mode on port ${app.get('port')}`)
+    logger.debug(`Running in ${app.get('env')} mode on port ${app.get('port')}`)
 })
