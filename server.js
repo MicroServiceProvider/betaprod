@@ -20,7 +20,7 @@ app.use(cookieParser())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 app.use(passport.initialize())
-app.use(token.initialize(passport, {secret: '120casd!CASC2@42149-&2asc20'}))
+app.use(token.initialize(passport, {secret: '120xxcasd!CASC2@42149-&2asc20'}))
 
 app.set('port', (process.env.PORT || 3001))
 if (app.get('env') === 'development') {
