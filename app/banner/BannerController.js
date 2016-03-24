@@ -7,12 +7,30 @@
  */
 function BannerController($scope, $http) {
 
-    $scope.bannerShown = true;
+
+   
 
     $scope.dismissBanner = function(){
 
         $scope.bannerShown = false;
     }
+
+
+    $scope.user = [];
+
+    $http.get("/api/user").then(response => {
+        $scope.user = response.data
+
+        if($scope.user.id){
+            $scope.bannerShown = false;
+        } else {
+            $scope.bannerShown = true;
+        }
+    })
+
+
+
+
 }
 
 module.exports = function(app) {
