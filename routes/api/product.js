@@ -23,7 +23,7 @@ if (process.env.NODE_ENV == 'production') {
 
 router.get('/:id', function(req, res) {
     // TODO: should check if the user has permission for this product
-    Product.get(req.params.id).then(function(product){
+    Product.get(req.params.id).getJoin({user:true}).run().then(function(product){
         res.json(product)
     }).catch(function(err){
         logger.info('Error fetching product',{err})
@@ -31,12 +31,12 @@ router.get('/:id', function(req, res) {
     })
 })
 
-function saveProduct(imageUrl, req, res) {
+function saveProduct(imageUrl,imageId, req, res) {
     Product.save({
         userId: req.user.id,
         name: req.body.name,
-        excerpt: req.body.excerpt,
         imageUrl: imageUrl,
+        imageId: imageId,
         website: req.body.website,
         description: req.body.description
     }).then(p=> {
@@ -48,11 +48,10 @@ function saveProduct(imageUrl, req, res) {
 router.post('/', token.auth(), upload.single('file'), function(req, res) {
     if (process.env.NODE_ENV == 'production') {
         cloudinary.uploader.upload(req.file.path, result =>
-                saveProduct(cloudinary.url(result.public_id,
-                    {width: 432, height: 325,  crop: 'pad'}), req, res))
+                saveProduct(null, result.public_id, req, res))
     }
     else {
-        saveProduct(`images/${req.file.filename}`,req, res)
+        saveProduct(`images/${req.file.filename}`,null,req, res)
     }
 })
 

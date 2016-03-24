@@ -20,10 +20,12 @@ const Product = thinky.createModel('Product', {
     id: type.string(),
     userId: type.string(),
     name: type.string(),
-    excerpt: type.string(),
     imageUrl: type.string(),
+    imageId: type.string(),
     website: type.string(),
     description: type.string()
 })
+
+Product.belongsTo(User, 'user', 'userId', 'id')
 
 module.exports = {User, Product, r: thinky.r}
