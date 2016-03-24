@@ -33,6 +33,11 @@ md-toolbar.main-toolbar {
         background-color: transparent;
       }
 
+      .md-button.md-icon-button {
+        padding: 0;
+        width: 40px;
+      }
+
       a.about-link {
         display: inline-block;
         padding-top: 8px;
@@ -61,3 +66,18 @@ md-toolbar.main-toolbar {
   color: lighten($text-color, 10);
 }
 
+
+
+md-menu-item > .md-button md-icon {
+    height: 17px;
+     width: 17px;
+
+}
+
+md-menu-item > .md-button, md-menu-item, md-menu-content  {
+  background-color: $white;
+}
+
+.md-open-menu-container.md-active {
+  margin-top: 50px;
+}

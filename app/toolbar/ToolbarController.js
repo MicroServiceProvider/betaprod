@@ -7,7 +7,7 @@
  */
 
 
-function ToolbarController($scope, $http, $mdDialog, $mdMedia, $state) {
+function ToolbarController($scope, $http, $mdDialog, $mdMedia, $state ) {
 
     //EDIT Project
     $scope.login = function(){
@@ -56,6 +56,11 @@ function ToolbarController($scope, $http, $mdDialog, $mdMedia, $state) {
             return false;
         }
     }
+
+
+    $scope.signOut = function(){
+
+    }
 }
 
 function LoginDialogController($scope) {
@@ -65,6 +70,6 @@ function LoginDialogController($scope) {
 };
 
 module.exports = function(app) {
-    app.controller('ToolbarController', ['$scope', '$http', '$mdDialog', '$mdMedia', '$state', ToolbarController])
+    app.controller('ToolbarController', ['$scope', '$http', '$mdDialog', '$mdMedia', '$state' , ToolbarController])
     app.controller('LoginDialogController',['$scope', LoginDialogController])
 }
