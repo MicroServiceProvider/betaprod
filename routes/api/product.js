@@ -48,8 +48,8 @@ function saveProduct(imageUrl, req, res) {
 router.post('/', token.auth(), upload.single('file'), function(req, res) {
     if (process.env.NODE_ENV == 'production') {
         cloudinary.uploader.upload(req.file.path, result =>
-                saveProduct(cloudinary.url(result.public_id), req, res),
-            {width: 360, height: 400,  crop: 'pad'})
+                saveProduct(cloudinary.url(result.public_id,
+                    {width: 432, height: 325,  crop: 'pad'}), req, res))
     }
     else {
         saveProduct(`images/${req.file.filename}`,req, res)
