@@ -1,8 +1,45 @@
 <div ng-show="loading" class="ng-hide">
+    <div class="container">
+        <div class="container-slim">
+            <div class="single-product">
 
-    <h1>{{product.name}}</h1>
+                <md-card>
+                    <md-card-content>
+                        <div layout>
+                            <div flex="50">
+                                <img class="responsive-img" ng-src="{{ product.imageUrl }}">
+                            </div>
 
-    <div class="fb-comments"
-         data-href="{{fb_comments_url}}"
-         data-numposts="20"></div>
+                            <div flex="50" layout="column" layout-align="center center" class="product-content">
+                                <div layout="column" layout-align="center center">
+                                    <img class="avatar avatar-large" ng-src="{{ user.photo }}">
+
+                                    <p class="center-align maker-info">{{ product.user.firstName }} {{
+                                        product.user.lastName
+                                        }}</p>
+
+
+                                </div>
+                                <div class="center-align">
+                                    <h3>{{ product.name }}</h3>
+                                    <p class="product-description justify">{{ product.description }}</p>
+                                </div>
+
+                                <a href="{{ product.website }}" target="_blank" class="center-align">
+                                    <md-button class="btn md-raised btn-default"> Go to website</md-button>
+                                </a>
+                            </div>
+                        </div>
+
+                    </md-card-content>
+                </md-card>
+
+
+            </div>
+
+            <div class="fb-comments"
+                 data-href="{{fb_comments_url}}"
+                 data-numposts="20"></div>
+        </div><!-- .container-slim -->
+    </div>
 </div>
