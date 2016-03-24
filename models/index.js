@@ -18,8 +18,9 @@ User.ensureIndex('provider_providerId', function(doc) {
 const Product = thinky.createModel('Product', {
     id: type.string(),
     userId: type.string(),
-    name: type.string()
+    name: type.string(),
+    excerpt: type.string(),
+    imageUrl: type.string()
 })
-
 
 module.exports = {User, Product}
