@@ -8,7 +8,7 @@
 function BannerController($scope, $http) {
 
 
-   
+
 
     $scope.dismissBanner = function(){
 
