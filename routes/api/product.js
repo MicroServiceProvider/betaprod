@@ -25,6 +25,8 @@ router.get('/:id', function(req, res) {
     // TODO: should check if the user has permission for this product
     Product.get(req.params.id).getJoin({user:true}).run().then(function(product){
         const result = Object.assign({}, product)
+        result.photo =  product.imageUrl || cloudinary.url(product.imageId,
+            {width: 432, height: 325,  crop: 'pad'})
         result.user = {
             firstName: product.user.firstName,
             lastName: product.user.lastName,
