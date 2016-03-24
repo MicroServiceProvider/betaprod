@@ -40,7 +40,7 @@ function ToolbarController($scope, $http, $mdDialog, $mdMedia, $state) {
 
     $scope.postProduct = function(){
 
-        if(isLogged()){
+        if($scope.isLogged()){
             $state.go("post");
         } else {
             openLogintDialog()
@@ -49,7 +49,7 @@ function ToolbarController($scope, $http, $mdDialog, $mdMedia, $state) {
 
     }
 
-    function isLogged() {
+    $scope.isLogged = function () {
         if( $scope.user.id) {
             return true;
         } else {

@@ -1,4 +1,4 @@
-<div class="grid" layout-padding="16"  flex-sm="100" flex-gt-sm="70">
+<div class="grid"  flex-sm="100" flex-gt-sm="80">
     <div ng-repeat="product in products">
 
         <md-card>
@@ -8,13 +8,13 @@
                         <img class="responsive-img" ng-src="{{ product.imageUrl }}">
                     </div>
 
-                    <div flex="50" layout="column" layout-align="center center">
-                        <div class="product-content" layout="column" layout-align="center center">
+                    <div flex="50" layout="column" layout-align="center center" class="product-content">
+                        <div class="center-align" >
                             <h2>{{ product.name }}</h2>
-                            <p>{{ product.excerpt }}</p>
+                            <p class="product-excerpt">{{ product.excerpt }}</p>
                         </div>
-                        <a href="/product/{{ product.id }}">
-                            <md-button class="md-raised btn-default"> Apply </md-button>
+                        <a href="/product/{{ product.id }}" class="center-align">
+                            <md-button class="btn md-raised btn-default"> Try It </md-button>
                         </a>
                     </div>
                 </div>
@@ -25,6 +25,6 @@
 
 </div>
 
-<sidebar flex="30" show-gt-sm>
+<sidebar flex="20" show-gt-sm>
 
 </sidebar>

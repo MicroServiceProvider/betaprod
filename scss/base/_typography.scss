@@ -3,7 +3,7 @@
  */
 body {
   color: $text-color;
-  font: normal 14px / 16px $text-font-stack;
+  font: normal 14px / 18px $text-font-stack;
 }
 
 
@@ -11,32 +11,38 @@ h1 {
   font-size: 3em;
   margin: 0.67em 0;
   font-weight: 900;
+  color: $text-color;
 }
 
 h2 {
   font-size: 2em;
   font-weight: 700;
+  color: $text-color;
 }
 
 
 h3 {
   font-size: 1.8em;
   font-weight: 700;
+  color: $text-color;
 }
 
 h4 {
   font-size: 1.6em;
   font-weight: 700;
+  color: $text-color;
 }
 
 h5 {
   font-size: 1.4em;
   font-weight: 700;
+  color: $text-color;
 }
 
 
 h6 {
   font-size: 1.2em;
+  color: $text-color;
 }
 
 

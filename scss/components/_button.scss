@@ -3,14 +3,17 @@
 // -----------------------------------------------------------------------------
 
 .btn {
-
+  text-transform: none;
 }
 
 .btn-transparent {
   color: $text-color;
   border: 1px solid $text-color;
+  background-color: transparent;
   padding: 6px 10px;
   border-radius: 8px;
+  margin-top: 3px;
+  display: block;
 }
 
 
@@ -35,6 +38,7 @@
   color: $white;
 
   &:hover {
-    color: $text-color;
+
+    background-color: $accent-green !important;
   }
 }
