@@ -35,7 +35,12 @@ passport.use(new FacebookStrategy({
         else {
             return users[0]
         }
-    }).then(user => done(null, {id: user.id, firstName: user.firstName, lastName: user.lastName})).catch(
+    }).then(user => done(null, {
+        id: user.id,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        photo: user.photo
+    })).catch(
         err => {
             logger.error('error when trying to fetch user from DB', {err: err})
             done(err)
