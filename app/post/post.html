@@ -24,31 +24,10 @@
                     </md-input-container>
                 </div>
 
-
                 <div layout>
-                    <md-input-container flex>
-                        <label>Excerpt</label>
-                        <textarea name="excerpt" ng-model="product.excerpt" maxlength="300" required="" ></textarea>
-                        <div ng-messages="createProduct.excerpt.$error">
-                            <div ng-message="required">This is required!</div>
-                        </div>
-                    </md-input-container>
-                    <md-button class="md-icon-button md-button md-ink-ripple help-button" type="button" ng-transclude=""
-                               aria-label="help">
-                        <md-tooltip md-direction="top">
-                            This is the excerpt of your product. Everyone can see this.
-                        </md-tooltip>
-                        <md-icon md-font-set="material-icons"> live_help</md-icon>
-                    </md-button>
-                </div>
-
-
-
-                <div layout>
-
                     <md-input-container flex>
                         <label>Description</label>
-                        <textarea required="" name="description" ng-model="product.description"></textarea>
+                        <textarea name="description" ng-model="product.description" maxlength="300" required="" ></textarea>
                         <div ng-messages="createProduct.description.$error">
                             <div ng-message="required">This is required!</div>
                         </div>
@@ -56,7 +35,7 @@
                     <md-button class="md-icon-button md-button md-ink-ripple help-button" type="button" ng-transclude=""
                                aria-label="help">
                         <md-tooltip md-direction="top">
-                            This is the full description of your product, only users that applyed to your project will be able to see this.
+                            This is the description of your product. Everyone can see this.
                         </md-tooltip>
                         <md-icon md-font-set="material-icons"> live_help</md-icon>
                     </md-button>

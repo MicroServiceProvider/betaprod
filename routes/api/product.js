@@ -35,7 +35,6 @@ function saveProduct(imageUrl,imageId, req, res) {
     Product.save({
         userId: req.user.id,
         name: req.body.name,
-        excerpt: req.body.excerpt,
         imageUrl: imageUrl,
         imageId: imageId,
         website: req.body.website,

@@ -8,7 +8,7 @@ router.get('/', function(request, response) {
             return {
                 id: p.id,
                 name: p.name,
-                excerpt: p.excerpt,
+                description: p.description,
                 imageUrl: p.imageUrl || cloudinary.url(p.imageId,
                     {width: 432, height: 325,  crop: 'pad'})
             }
