@@ -24,7 +24,13 @@ if (process.env.NODE_ENV == 'production') {
 router.get('/:id', function(req, res) {
     // TODO: should check if the user has permission for this product
     Product.get(req.params.id).getJoin({user:true}).run().then(function(product){
-        res.json(product)
+        const result = Object.assign({}, product)
+        result.user = {
+            firstName: product.user.firstName,
+            lastName: product.user.lastName,
+            photo: product.user.photo
+        }
+        res.json(result)
     }).catch(function(err){
         logger.info('Error fetching product',{err})
         res.sendStatus(404)
