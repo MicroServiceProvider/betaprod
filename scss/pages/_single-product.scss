@@ -1,0 +1,17 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the single-product page.
+// -----------------------------------------------------------------------------
+
+.fb-comments,.fb-comments span, .fb-comments iframe[style] {width: 100% !important;}
+
+.single-product {
+  padding-top: 40px;
+
+  .maker-info {
+    margin-top: 5px;
+  }
+
+  .product-description {
+    padding: 0 15px 0 15px;
+  }
+}
