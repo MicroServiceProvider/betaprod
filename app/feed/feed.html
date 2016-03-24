@@ -1,15 +1,29 @@
-<h1>Feed</h1>
+<div class="grid" layout-padding="16">
+    <div ng-repeat="product in products">
 
-<div ng-repeat="feed in feeds">
+        <md-card>
+            <md-card-content>
+                <div layout>
+                    <div flex="50">
+                        <img class="responsive-img" ng-src="{{ product.imageUrl }}">
+                    </div>
 
-    <md-card>
-        <img src="" class="md-card-image" alt="image caption">
-        <md-card-content>
-            <h2>{{feed.name}}</h2>
-            <p>Card content</p>
-        </md-card-content>
-        <md-card-footer>
-            Card footer
-        </md-card-footer>
-    </md-card>
+                    <div flex="50" layout="column" layout-align="center center">
+                        <div class="product-content">
+                            <h2>{{ product.name }}</h2>
+                            <p>{{ product.excerpt }}</p>
+                        </div>
+                        <a href="/product/{{ product.id }}">
+                            <md-button class="md-raised btn-default"> Apply </md-button>
+                        </a>
+                    </div>
+                </div>
+
+            </md-card-content>
+        </md-card>
+    </div>
+
+
+
+
 </div>
