@@ -20,7 +20,9 @@ const Product = thinky.createModel('Product', {
     userId: type.string(),
     name: type.string(),
     excerpt: type.string(),
-    imageUrl: type.string()
+    imageUrl: type.string(),
+    website: type.string(),
+    description: type.string()
 })
 
-module.exports = {User, Product}
+module.exports = {User, Product, r: thinky.r}
