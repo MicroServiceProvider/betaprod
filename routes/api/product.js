@@ -9,7 +9,7 @@ const router = require('express').Router()
 const Product = require('../../models/index').Product
 const logger = require('../../logger')
 const token = require('../../token')
-const upload = require('multer')({ dest: 'public/images/' })
+const upload = require('multer')({ dest: 'public/images/products' })
 const cloudinary = require('cloudinary')
 const process = require('process')
 
