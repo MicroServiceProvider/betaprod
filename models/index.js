@@ -8,7 +8,8 @@ const User = thinky.createModel('User', {
     provider: type.string(),
     firstName: type.string(),
     lastName: type.string(),
-    email: type.string()
+    email: type.string(),
+    photo: type.string()
 })
 
 User.ensureIndex('provider_providerId', function(doc) {

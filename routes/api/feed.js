@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const Product = require('../models').Product
+const Product = require('../../models/index').Product
 
 router.get('/', function(request, response) {
     Product.run().then(products => {

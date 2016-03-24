@@ -17,9 +17,8 @@ passport.use(new FacebookStrategy({
     clientSecret: 'f6f4842997558f16642f41d8f0cef3b6',
     callbackURL: callback,
     enableProof: true,
-    profileFields:['id', 'displayName', 'email','first_name','last_name']
+    profileFields:['id', 'displayName', 'email','first_name','last_name','picture']
 }, function(accessToken, refreshToken, profile, done) {
-
     User.getAll(['facebook', profile.id], {index: 'provider_providerId'}).run().then(users => {
         if(users.length == 0) {
             // new user
@@ -29,13 +28,19 @@ passport.use(new FacebookStrategy({
                 provider: 'facebook',
                 firstName: profile.name.givenName,
                 lastName: profile.name.familyName,
-                email: profile.emails[0].value
+                email: profile.emails[0].value,
+                photo: profile.photos[0].value
             })
         }
         else {
             return users[0]
         }
-    }).then(user => done(null, {id: user.id, firstName: user.firstName, lastName: user.lastName})).catch(
+    }).then(user => done(null, {
+        id: user.id,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        photo: user.photo
+    })).catch(
         err => {
             logger.error('error when trying to fetch user from DB', {err: err})
             done(err)

@@ -7,8 +7,9 @@ const passport = require('passport')
 const token = require('./token')
 const logger = require('./logger')
 const login = require('./routes/login')
-const feed = require('./routes/feed')
-const product = require('./routes/product')
+const feed = require('./routes/api/feed')
+const product = require('./routes/api/product')
+const user = require('./routes/api/user')
 
 
 require('./models')
@@ -19,7 +20,7 @@ app.use(cookieParser())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 app.use(passport.initialize())
-app.use(token.initialize(passport, {secret: '120casd!CASC2@42149-&2asc20'}))
+app.use(token.initialize(passport, {secret: '120xxcasd!CASC2@42149-&2asc20'}))
 
 app.set('port', (process.env.PORT || 3001))
 if (app.get('env') === 'development') {
@@ -40,6 +41,7 @@ app.use(express.static('public'))
 app.use('/login', login)
 app.use('/api/feed', feed)
 app.use('/api/product', product)
+app.use('/api/user', user)
 
 // Serve index file for all known paths
 function serveIndex(req, res) {
@@ -50,5 +52,5 @@ app.get('/product/:id', serveIndex)
 
 // Start app
 app.listen(app.get('port'), function () {
-    logger.info(`Running in ${app.get('env')} mode on port ${app.get('port')}`)
+    logger.debug(`Running in ${app.get('env')} mode on port ${app.get('port')}`)
 })
