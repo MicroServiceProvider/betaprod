@@ -14,13 +14,14 @@ $text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvet
 /// @type List
 $code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
 
+$text-normal: 14px;
 
 
-
-
+$white: rgb(255, 255, 255);
+$black: rgb(0, 0, 0);
 /// Copy text color
 /// @type Color
-$text-color: rgb(34, 34, 34) !default;
+$text-color: rgb(91, 103, 101) !default;
 
 /// Main brand color
 /// @type Color
@@ -55,11 +56,16 @@ $max-width: 1180px !default;
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels
 /// @see {mixin} respond-to
 $breakpoints: (
-  'small': (min-width: 320px),
-  'medium': (min-width: 768px),
-  'large': (min-width: 1024px),
+        'xs':(max-width: 599px),
+        'gt-xs':(min-width: 600px),
+        'sm': (min-width: 600px) and (max-width: 959px),
+        'gt-sm':(min-width: 960px),
+        'md':(min-width: 960px) and (max-width: 1279px),
+        'gt-md':(min-width: 1280px),
+        'lg': (min-width: 1280px) and (max-width: 1919px),
+        'gt-lg': (min-width: 1920px),
+        'xl': (min-width: 1920px),
 ) !default;
-
 
 
 

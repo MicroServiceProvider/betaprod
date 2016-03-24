@@ -3,5 +3,53 @@
  */
 body {
   color: $text-color;
-  font: normal 125% / 1.4 $text-font-stack;
+  font: normal 14px / 16px $text-font-stack;
 }
+
+
+h1 {
+  font-size: 3em;
+  margin: 0.67em 0;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+
+h3 {
+  font-size: 1.8em;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 1.6em;
+  font-weight: 700;
+}
+
+h5 {
+  font-size: 1.4em;
+  font-weight: 700;
+}
+
+
+h6 {
+  font-size: 1.2em;
+}
+
+
+p {
+
+}
+
+
+.strong {
+  font-weight: 700;
+}
+
+a {
+  color: $text-color;
+}
+

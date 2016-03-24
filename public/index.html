@@ -5,15 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <md-toolbar layout="row">
-        <h1>Betaprod</h1>
+    <md-toolbar class="main-toolbar md-whiteframe-2dp" >
+        <div class="container" layout="row">
+            <div class="logo-div">
+                <a href="/">
+                    <img class="logo" src="images/header/logo.png">
+                </a>
+            </div>
+            <span class="flex"></span>
+            <nav>
+                <ul class="navigation">
+                    <li>
+                        <a class="btn btn-transparent" href="#">Post A Product</a>
+                    </li>
+                    <li>
+                        <a href="/login" class="login-btn">
+                            <md-icon md-svg-src="images/header/sign-in.svg" aria-label="sign-in "></md-icon>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
     </md-toolbar>
-    <div flex layout-padding>
-        <md-content flex id="content" ui-view>
+    <div flex class="container">
+        <md-content flex="70" id="content" ui-view>
         </md-content>
+        <sidebar flsex="30">
+
+        </sidebar>
     </div>
     <script type="text/javascript" src="bundle.js"></script>
 </body>
