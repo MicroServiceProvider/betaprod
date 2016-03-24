@@ -7,8 +7,9 @@ const passport = require('passport')
 const token = require('./token')
 const logger = require('./logger')
 const login = require('./routes/login')
-const feed = require('./routes/feed')
-const product = require('./routes/product')
+const feed = require('./routes/api/feed')
+const product = require('./routes/api/product')
+const user = require('./routes/api/user')
 
 
 require('./models')
@@ -40,6 +41,7 @@ app.use(express.static('public'))
 app.use('/login', login)
 app.use('/api/feed', feed)
 app.use('/api/product', product)
+app.use('/api/user', user)
 
 // Serve index file for all known paths
 function serveIndex(req, res) {

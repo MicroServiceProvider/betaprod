@@ -6,9 +6,9 @@
  * Time: 15:55
  */
 const router = require('express').Router()
-const Product = require('../models').Product
-const logger = require('../logger')
-const token = require('../token')
+const Product = require('../../models/index').Product
+const logger = require('../../logger')
+const token = require('../../token')
 const upload = require('multer')({ dest: 'public/images/' })
 const cloudinary = require('cloudinary')
 const process = require('process')
