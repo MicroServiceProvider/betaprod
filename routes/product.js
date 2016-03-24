@@ -33,6 +33,7 @@ router.get('/:id', token.auth(), function(req, res) {
 
 function saveProduct(imageUrl, req, res) {
     Product.save({
+        userId: req.user.id,
         name: req.body.name,
         excerpt: req.body.excerpt,
         imageUrl: imageUrl,
