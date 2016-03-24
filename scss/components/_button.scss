@@ -14,6 +14,17 @@
 }
 
 
+.btn-facebook {
+  margin-top: 30px;
+  background-color: rgb(59, 89, 152);
+  color: $white;
+
+
+  @include on-event(){
+    background-color: rgb(59, 89, 152) !important;
+    color: $white;
+  }
+}
 
 
 

@@ -1,31 +1,69 @@
-<h1>New product</h1>
+<div layout layout-align="center center" class="post-create-title">
+    <h3> Posting your project is easy!</h3>
+</div>
+<div layout>
+    <md-card flex="60" flex-offset="20">
+        <md-card-content>
+            <form>
+                <div layout-gt-sm="row">
+                    <md-input-container flex>
+                        <label>Name</label>
+                        <input md-maxlength="100" required ng-model="product.name"/>
+                    </md-input-container>
 
-<md-content>
-    <form>
-        <div>
-            <md-input-container>
-                <label>Name</label>
-                <input md-maxlength="100" required ng-model="product.name"/>
-            </md-input-container>
-        </div>
-        <div>
-            <md-input-container>
-                <label>Excerpt</label>
-                <input md-maxlength="2000" required ng-model="product.excerpt"/>
-            </md-input-container>
-        </div>
-        <div>
-            <md-input-container>
-                <label>Description</label>
-                <input md-maxlength="2000" required ng-model="product.description"/>
-            </md-input-container>
-        </div>
-        <div>
-            <md-input-container>
-                <label>Website</label>
-                <input md-maxlength="250" required ng-model="product.website"/>
-            </md-input-container>
-        </div>
-        <md-button type="submit" class="btn-default" ng-click="submit()">Create</md-button>
-    </form>
-</md-content>
+                    <md-input-container flex>
+                        <label>Website</label>
+                        <textarea ng-model="product.website" required md-maxlength="2000"></textarea>
+                    </md-input-container>
+                </div>
+
+
+                <div layout>
+                    <md-button class="md-icon-button md-button md-ink-ripple help-button" type="button" ng-transclude=""
+                               aria-label="help">
+                        <md-tooltip md-direction="top">
+                            This is the excerpt of your product. Everyone can see this.
+                        </md-tooltip>
+                        <md-icon md-font-set="material-icons"> live_help</md-icon>
+                    </md-button>
+                </div>
+                <div layout>
+                    <md-input-container flex>
+                        <label>Excerpt</label>
+                        <textarea ng-model="product.excerpt" required md-maxlength="2000"></textarea>
+                    </md-input-container>
+                </div>
+
+
+                <div layout>
+                    <md-button class="md-icon-button md-button md-ink-ripple help-button" type="button" ng-transclude=""
+                               aria-label="help">
+                        <md-tooltip md-direction="top">
+                            This is the full description of your product, only users that applyed to your project will be able to see this.
+                        </md-tooltip>
+                        <md-icon md-font-set="material-icons"> live_help</md-icon>
+                    </md-button>
+                </div>
+
+                <div layout>
+                    <md-input-container flex>
+                        <label>Description</label>
+                        <input md-maxlength="2000" required ng-model="product.description"/>
+                    </md-input-container>
+                </div>
+
+                <div layout>
+                    <label>Product Image</label>
+                </div>
+                <div layout>
+                    <md-input-container flex>
+                        <input type="file" required accept=".jpg,.png,.gif"/>
+                    </md-input-container>
+                </div>
+                <div layout layout-align="center center">
+                    <md-button type="submit" class="btn-default" ng-click="submit()">Post Project</md-button>
+                </div>
+            </form>
+        </md-card-content>
+    </md-card>
+</div>

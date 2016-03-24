@@ -6,9 +6,11 @@
 .logo-div {
   padding: 20px 0;
 
-  .logo {
-    max-width: 200px;
-  }
+
+}
+
+.logo {
+  max-width: 200px;
 }
 
 md-toolbar.main-toolbar {
@@ -29,4 +31,10 @@ md-toolbar.main-toolbar {
 .login-btn md-icon {
   height: 35px;
   width: 35px;
+}
+
+.login-dialog {
+
+  width: 300px;
+  height: 230px;
 }

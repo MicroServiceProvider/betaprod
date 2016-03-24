@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <md-toolbar class="main-toolbar md-whiteframe-2dp" >
+    <md-toolbar class="main-toolbar md-whiteframe-2dp" ng-controller="ToolbarController" >
         <div class="container" layout="row">
             <div class="logo-div">
                 <a href="/">
@@ -20,10 +20,10 @@
             <nav>
                 <ul class="navigation">
                     <li>
-                        <a class="btn btn-transparent" href="#">Post A Product</a>
+                        <a class="btn btn-transparent" href="/post">Post A Product</a>
                     </li>
                     <li>
-                        <a href="/login" class="login-btn">
+                        <a href ng-click="login()" class="login-btn">
                             <md-icon md-svg-src="images/header/sign-in.svg" aria-label="sign-in "></md-icon>
                         </a>
                     </li>
@@ -33,12 +33,23 @@
 
     </md-toolbar>
     <div flex class="container">
-        <md-content flex="70" id="content" ui-view>
+        <md-content id="content" ui-view>
         </md-content>
-        <sidebar flsex="30">
 
-        </sidebar>
     </div>
+    <div class="footer">
+
+    </div>
+    <md-dialog aria-label="Login dialog">
+        <md-dialog-content>
+           <md-button class="md-raised">
+               <md-icon md-svg-src="images/header/facebook.svg" aria-label="facebook-login"></md-icon>
+           </md-button>
+        </md-dialog-content>
+        <md-dialog-actions>
+            <md-button ng-click="" class="md-primary">Close Dialog</md-button>
+        </md-dialog-actions>
+    </md-dialog>
     <script type="text/javascript" src="bundle.js"></script>
 </body>
 </html>

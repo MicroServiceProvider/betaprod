@@ -1,4 +1,4 @@
-<div class="grid" layout-padding="16">
+<div class="grid" layout-padding="16"  flex-sm="100" flex-gt-sm="70">
     <div ng-repeat="product in products">
 
         <md-card>
@@ -9,7 +9,7 @@
                     </div>
 
                     <div flex="50" layout="column" layout-align="center center">
-                        <div class="product-content">
+                        <div class="product-content" layout="column" layout-align="center center">
                             <h2>{{ product.name }}</h2>
                             <p>{{ product.excerpt }}</p>
                         </div>
@@ -23,7 +23,8 @@
         </md-card>
     </div>
 
-
-
-
 </div>
+
+<sidebar flex="30" show-gt-sm>
+
+</sidebar>

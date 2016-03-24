@@ -18,6 +18,7 @@ require('./feed/FeedController')(app)
 require('./post/PostController')(app)
 require('./product/ProductController')(app)
 require('./sidebar/SidebarController')(app)
+require('./toolbar/ToolbarController')(app)
 
 // Configure routes
 app.config(['$stateProvider', '$urlRouterProvider','$locationProvider',
