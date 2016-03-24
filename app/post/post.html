@@ -16,7 +16,7 @@
 
                     <md-input-container flex>
                         <label>Website</label>
-                        <input type="url" name="website" ng-model="product.website" required="" >
+                        <input type="url" name="website" ng-model="product.website" required="" placeholder="http://..." >
                         <div ng-messages="createProduct.website.$error">
                             <div ng-message="url">This isn't a valid URL!</div>
                             <div ng-message="required">This is required!</div>
