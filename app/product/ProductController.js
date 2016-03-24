@@ -10,6 +10,14 @@ function ProductController($scope, $stateParams,$http) {
     $scope.product = {}
     $http.get(`api/product/${$stateParams.id}`).then(response=> {
         $scope.product = response.data
+
+        DISQUS.reset({
+            reload: true,
+            config: function () {
+                this.page.identifier = $scope.product.id;
+                this.page.url = `http://betaprod.co/product/${$scope.product.id}`;
+            }
+        });
     }).catch(err=>{
         console.log(err)
     })
