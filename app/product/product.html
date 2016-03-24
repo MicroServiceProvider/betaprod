@@ -1,3 +1,8 @@
-<h1>{{product.name}}</h1>
+<div ng-show="loading" class="ng-hide">
 
-<div id="disqus_thread"></div>
+    <h1>{{product.name}}</h1>
+
+    <div class="fb-comments"
+         data-href="{{fb_comments_url}}"
+         data-numposts="20"></div>
+</div>

@@ -4,7 +4,8 @@ const material = require('angular-material')
 const animate = require('angular-animate')
 const aria = require('angular-aria')
 const messages = require('angular-messages')
-const fileUpload = require('angular-file-upload/dist/angular-file-upload')
+require('angular-file-upload/dist/angular-file-upload')
+require("setimmediate")
 
 // Import main SASS
 require('../scss/main.scss')

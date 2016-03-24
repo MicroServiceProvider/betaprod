@@ -6,19 +6,18 @@
  * Time: 15:43
  */
 function ProductController($scope, $stateParams,$http) {
-    console.log($stateParams)
     $scope.product = {}
+    $scope.loading = true
     $http.get(`api/product/${$stateParams.id}`).then(response=> {
         $scope.product = response.data
+        $scope.fb_comments_url = `http://betaprod.co/product/${$scope.product.id}`
 
-        DISQUS.reset({
-            reload: true,
-            config: function () {
-                this.page.identifier = $scope.product.id;
-                this.page.url = `http://betaprod.co/product/${$scope.product.id}`;
+        setImmediate(function() {
+            if (typeof FB !== 'undefined') {
+                FB.XFBML.parse()
             }
-        });
-    }).catch(err=>{
+        })
+    }).catch(err=> {
         console.log(err)
     })
 }

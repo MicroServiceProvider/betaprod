@@ -21,7 +21,7 @@ if (process.env.NODE_ENV == 'production') {
     })
 }
 
-router.get('/:id', token.auth(), function(req, res) {
+router.get('/:id', function(req, res) {
     // TODO: should check if the user has permission for this product
     Product.get(req.params.id).then(function(product){
         res.json(product)

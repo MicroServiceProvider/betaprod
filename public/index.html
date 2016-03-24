@@ -10,6 +10,14 @@
     <link rel="icon" href="favicon.png" />
 </head>
 <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=808953575900122";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
     <md-toolbar class="main-toolbar md-whiteframe-2dp" ng-controller="ToolbarController" >
         <div class="container" layout="row">
             <div class="logo-div">
@@ -52,16 +60,5 @@
         </md-dialog-actions>
     </md-dialog>
     <script type="text/javascript" src="bundle.js"></script>
-    <script>
-        (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-
-            s.src = '//betaprod.disqus.com/embed.js';
-
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 </body>
 </html>
