@@ -14,7 +14,7 @@ then(() => User.save({
     })).
 then(user =>
     Product.save({
-        userId: user.id,
+        userId: '05251de6-96c0-45f0-aca5-7c6f5861d5c5', // user.id,
         name:'betaprod',
         excerpt:'It is a long established fact that a reader ' +
         'will be distracted by the readable content of a page when ' +
@@ -27,7 +27,7 @@ then(user =>
         'will uncover many web sites still in their infancy. ' +
         'Various versions have evolved over the years, sometimes by accident, ' +
         ' on purpose (injected humour and the like).',
-        imageUrl:'http://unsplash.com/photos/TMOeGZw9NY4',
+        imageUrl:'https://pixabay.com/static/uploads/photo/2015/01/08/18/27/startup-593341_960_720.jpg',
         description:'Lorem ipsum dolor sit amet, duo nullam labore albucius ut, ' +
         'suscipit voluptua te nec. Eum no invenire interesset consectetuer, ' +
         'no sed illud commune accusata. Tacimates suavitate has at, option indoctum ' +
