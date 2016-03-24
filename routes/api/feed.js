@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const Product = require('../../models/index').Product
+const cloudinary = require('cloudinary')
 
 router.get('/', function(request, response) {
     Product.run().then(products => {
@@ -8,7 +9,8 @@ router.get('/', function(request, response) {
                 id: p.id,
                 name: p.name,
                 excerpt: p.excerpt,
-                imageUrl: p.imageUrl
+                imageUrl: p.imageUrl || cloudinary.url(p.imageId,
+                    {width: 432, height: 325,  crop: 'pad'})
             }
         }))
     })

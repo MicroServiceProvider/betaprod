@@ -22,6 +22,7 @@ const Product = thinky.createModel('Product', {
     name: type.string(),
     excerpt: type.string(),
     imageUrl: type.string(),
+    imageId: type.string(),
     website: type.string(),
     description: type.string()
 })
