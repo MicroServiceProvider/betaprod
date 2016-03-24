@@ -9,6 +9,8 @@ const router = require('express').Router()
 const Product = require('../models').Product
 const logger = require('../logger')
 const token = require('../token')
+const upload = require('multer')({ dest: 'public/images/' })
+
 
 router.get('/:id', token.auth(), function(req, res) {
     // TODO: should check if the user has permission for this product
@@ -20,8 +22,14 @@ router.get('/:id', token.auth(), function(req, res) {
     })
 })
 
-router.post('/', token.auth(), function(req, res) {
-    Product.save(req.body).then(p=> res.json(p))
+router.post('/', token.auth(), upload.single('file'), function(req, res) {
+    Product.save({
+        name: req.body.name,
+        excerpt: req.body.excerpt,
+        imageUrl: `images/${req.file.filename}`,
+        website: req.body.website,
+        description: req.body.description
+    }).then(p=> res.json(p))
 })
 
 module.exports = router

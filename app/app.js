@@ -4,12 +4,14 @@ const material = require('angular-material')
 const animate = require('angular-animate')
 const aria = require('angular-aria')
 const messages = require('angular-messages')
+const fileUpload = require('angular-file-upload/dist/angular-file-upload')
 
 // Import main SASS
 require('../scss/main.scss')
 
 // Creating angular app
-let app = angular.module('app', [router, material, animate, aria, messages])
+const app = angular.module('app',
+    [router, material, animate, aria, messages,'angularFileUpload'])
 
 // Registering controllers
 require('./feed/FeedController')(app)

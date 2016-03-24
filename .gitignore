@@ -35,9 +35,11 @@ node_modules
 # Generated files
 public/bundle.js
 public/style.css
+public/images
 
 # IDE fils
 .idea
 
 # Rethinkdb
 rethinkdb_data
+
