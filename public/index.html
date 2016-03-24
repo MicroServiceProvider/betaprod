@@ -4,7 +4,7 @@
     <base href="/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>BetaProd</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -20,11 +20,12 @@
             <nav>
                 <ul class="navigation">
                     <li>
-                        <a class="btn btn-transparent" href ng-click="postProduct()">Post A Product</a>
+                        <button class="btn btn-transparent" href ng-click="postProduct()">Post A Product</button>
                     </li>
                     <li>
                         <a href ng-click="login()" class="login-btn">
-                            <md-icon md-svg-src="images/header/sign-in.svg" aria-label="sign-in "></md-icon>
+                            <md-icon md-svg-src="images/header/sign-in.svg" ng-hide="isLogged()" aria-label="sign-in "></md-icon>
+                            <img class="avatar" ng-src="{{ user.photo }}" ng-show="isLogged()">
                         </a>
                     </li>
                 </ul>
@@ -32,9 +33,7 @@
         </div>
 
     </md-toolbar>
-    <div flex class="container">
-        <md-content id="content" ui-view>
-        </md-content>
+    <div flex class="container" id="content" ui-view>
 
     </div>
     <div class="footer">
