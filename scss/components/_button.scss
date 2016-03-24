@@ -12,3 +12,16 @@
   padding: 6px 10px;
   border-radius: 8px;
 }
+
+
+
+
+
+.md-button.btn-default {
+  background-color: $accent;
+  color: $white;
+
+  &:hover {
+    color: $text-color;
+  }
+}
