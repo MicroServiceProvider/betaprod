@@ -1,4 +1,4 @@
-function PostController($scope, $http, $state, FileUploader) {
+function PostController($scope, $http,  $state, FileUploader) {
     $scope.uploader = new FileUploader({ url: '/api/product'})
     $scope.product = {}
 
@@ -18,5 +18,5 @@ function PostController($scope, $http, $state, FileUploader) {
 }
 
 module.exports = function(app) {
-    app.controller('PostController', ['$scope','$http', '$state','FileUploader', PostController])
+    app.controller('PostController', ['$scope','$http',  '$state','FileUploader', PostController])
 }

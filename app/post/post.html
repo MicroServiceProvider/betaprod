@@ -4,16 +4,23 @@
 <div layout>
     <md-card flex="60" flex-offset="20">
         <md-card-content>
-            <form>
+            <form  novalidate name="createProduct">
                 <div layout-gt-sm="row">
                     <md-input-container flex>
-                        <label>Name</label>
-                        <input md-maxlength="100" required ng-model="product.name"/>
+                        <label>Product Name</label>
+                        <input name="name" required="" ng-model="product.name"/>
+                        <div ng-messages="createProduct.name.$error">
+                            <div ng-message="required">This is required!</div>
+                        </div>
                     </md-input-container>
 
                     <md-input-container flex>
                         <label>Website</label>
-                        <textarea ng-model="product.website" required md-maxlength="2000"></textarea>
+                        <input type="url" name="website" ng-model="product.website" required="" >
+                        <div ng-messages="createProduct.website.$error">
+                            <div ng-message="url">This isn't a valid URL!</div>
+                            <div ng-message="required">This is required!</div>
+                        </div>
                     </md-input-container>
                 </div>
 
@@ -30,7 +37,10 @@
                 <div layout>
                     <md-input-container flex>
                         <label>Excerpt</label>
-                        <textarea ng-model="product.excerpt" required md-maxlength="2000"></textarea>
+                        <textarea name="excerpt" ng-model="product.excerpt" required="" ></textarea>
+                        <div ng-messages="createProduct.excerpt.$error">
+                            <div ng-message="required">This is required!</div>
+                        </div>
                     </md-input-container>
                 </div>
 
@@ -48,7 +58,10 @@
                 <div layout>
                     <md-input-container flex>
                         <label>Description</label>
-                        <input md-maxlength="2000" required ng-model="product.description"/>
+                        <input required="" name="description" ng-model="product.description"/>
+                        <div ng-messages="createProduct.description.$error">
+                            <div ng-message="required">This is required!</div>
+                        </div>
                     </md-input-container>
                 </div>
 
@@ -57,7 +70,10 @@
                 </div>
                 <div layout>
                     <md-input-container flex>
-                        <input type="file" nv-file-select uploader="uploader" required accept=".jpg,.png,.gif"/>
+                        <input name="image" type="file" nv-file-select uploader="uploader" required="" accept=".jpg,.png,.gif"/>
+                        <div ng-messages="createProduct.image.$error">
+                            <div ng-message="required">This is required!</div>
+                        </div>
                     </md-input-container>
                 </div>
                 <div layout layout-align="center center">
