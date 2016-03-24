@@ -1,7 +1,7 @@
 <div layout layout-align="center center" class="post-create-title">
     <h3> Posting your product is easy!</h3>
 </div>
-<div layout>
+<div layout class="product-create-div">
     <md-card flex="60" flex-offset="20">
         <md-card-content>
             <form  novalidate name="createProduct">
@@ -47,6 +47,7 @@
                 <div layout>
                     <md-input-container flex>
                         <input name="image" type="file" nv-file-select uploader="uploader" required="" accept=".jpg,.png,.gif"/>
+
                         <div ng-show="imageRequired">This is required!</div>
                     </md-input-container>
                 </div>

@@ -8,7 +8,6 @@
 }
 
 .welcome-banner {
-  position: absolute;
   width: 100%;
   background: url("/images/banner/hero_image.png") no-repeat;
   background-size: cover;
@@ -31,7 +30,7 @@
 
 .dismiss-banner {
   position:absolute;
-  top: 55px;
+  top: 85px;
   right: 20px;
 
     md-icon.material-icons {

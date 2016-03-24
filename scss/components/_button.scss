@@ -18,7 +18,7 @@
 
 
 .btn-facebook {
-  margin-top: 20px;
+
   background-color: rgb(59, 89, 152);
   color: $white;
   border-radius: 50px;
@@ -31,7 +31,9 @@
   }
 }
 
-
+.md-button.btn-product {
+  padding: 0 20px;
+}
 
 .md-button.btn-default {
   background-color: $accent;
