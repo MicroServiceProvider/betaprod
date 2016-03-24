@@ -46,7 +46,8 @@ function saveProduct(imageUrl,imageId, req, res) {
         imageUrl: imageUrl,
         imageId: imageId,
         website: req.body.website,
-        description: req.body.description
+        description: req.body.description,
+        createdAt: (new Date).getTime()
     }).then(p=> {
         logger.info(`new product ${p.name}`)
         res.json(p)
