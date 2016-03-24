@@ -20,6 +20,14 @@ function ProductController($scope, $stateParams,$http) {
     }).catch(err=> {
         console.log(err)
     })
+
+
+
+    $scope.user = [];
+
+    $http.get("/api/user").then(response => {
+        $scope.user = response.data
+    })
 }
 
 module.exports = function(app) {

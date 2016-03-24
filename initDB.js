@@ -18,7 +18,7 @@ then(() => User.save({
     })).
 then(user =>
     Product.save({
-        userId: '05251de6-96c0-45f0-aca5-7c6f5861d5c5', // user.id,
+        userId: user.id,
         name:'betaprod',
         imageUrl:'https://pixabay.com/static/uploads/photo/2015/01/08/18/27/startup-593341_960_720.jpg',
         description:'Lorem ipsum dolor sit amet, duo nullam labore albucius ut, ' +
