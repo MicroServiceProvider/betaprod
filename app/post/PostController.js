@@ -3,6 +3,15 @@ function PostController($scope, $http,  $state, FileUploader) {
     $scope.product = {}
 
     $scope.submit = function () {
+
+        if ($scope.uploader.queue.length == 0) {
+            $scope.imageRequired = true
+            return
+        }
+
+        if (!$scope.createProduct.$valid)
+            return
+
         const array = Object.keys($scope.product).map(k=> {
             const obj = {}
             obj[k] = $scope.product[k]

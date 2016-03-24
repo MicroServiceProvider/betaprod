@@ -54,6 +54,6 @@ router.get('/facebook', passport.authenticate('facebook', {scope: ['email', 'pub
 router.get('/facebook/callback',
     passport.authenticate('facebook', {session:false}),
     token.login({redirect:'/'}))
-router.get('/logout', token.logout({redirect:'/login'}))
+router.get('/logout', token.logout({redirect:'/'}))
 
 module.exports = router

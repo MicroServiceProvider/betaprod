@@ -23,8 +23,11 @@ const Product = thinky.createModel('Product', {
     imageUrl: type.string(),
     imageId: type.string(),
     website: type.string(),
-    description: type.string()
+    description: type.string(),
+    createdAt: type.number()
 })
+
+Product.ensureIndex('createdAt')
 
 Product.belongsTo(User, 'user', 'userId', 'id')
 
