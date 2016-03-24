@@ -7,13 +7,18 @@
  */
 
 
-// , $mdDialog, $mdMedia
-function ToolbarController($scope,$mdMedia,$mdDialog) {
+function ToolbarController($scope, $http, $mdDialog, $mdMedia, $state) {
 
     //EDIT Project
     $scope.login = function(){
         openLogintDialog();
     }
+
+    $scope.user = [];
+
+    $http.get("/api/user").then(response => {
+        $scope.user = response.data
+    })
 
 
     //Open the Edit Project Dialog
@@ -32,18 +37,34 @@ function ToolbarController($scope,$mdMedia,$mdDialog) {
             clickOutsideToClose: true
         })
     }
+
+    $scope.postProduct = function(){
+
+        if(isLogged()){
+            $state.go("post");
+        } else {
+            openLogintDialog()
+        }
+
+
+    }
+
+    function isLogged() {
+        if( $scope.user.id) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
 
 function LoginDialogController($scope) {
-
     $scope.closeDialog = function(){
         $mdDialog.cancel();
     }
 };
 
-// '$mdDialog', '$mdMedia',
-
 module.exports = function(app) {
-    app.controller('ToolbarController', ['$scope','$mdMedia','$mdDialog', ToolbarController])
+    app.controller('ToolbarController', ['$scope', '$http', '$mdDialog', '$mdMedia', '$state', ToolbarController])
     app.controller('LoginDialogController',['$scope', LoginDialogController])
 }
