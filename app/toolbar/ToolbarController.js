@@ -58,9 +58,6 @@ function ToolbarController($scope, $http, $mdDialog, $mdMedia, $state ) {
     }
 
 
-    $scope.signOut = function(){
-
-    }
 }
 
 function LoginDialogController($scope) {

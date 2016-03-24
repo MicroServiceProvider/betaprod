@@ -71,6 +71,39 @@
 <div class="footer">
 
 </div>
+
+<!-- WELCOME BANNER -->
+
+<div class="welcome-banner" ng-show="bannerShown" ng-controller="BannerController" flex layout layout-align="center center">
+
+    <div class="welcome-banner-content">
+        <md-button class="md-icon-button md-button md-ink-ripple dismiss-banner" type="button" ng-transclude=""
+                   ng-click="dismissBanner()" aria-label="Dismiss banner">
+            <md-icon md-font-set="material-icons"> close</md-icon>
+        </md-button>
+        <div layout layout-align="center">
+            <h1 class="welcome-banner-title">Welcome to</h1>
+            <img class="welcome-banner-logo responsive-img" ng-src="images/banner/logo_white.png">
+        </div>
+        <div layout layout-align="center center">
+            <p class="center-align strong">BetaProd lets you be the first to try the coolest new digital products and give <br> entrepereneurs your personal insight about their product.</p>
+        </div>
+        <div layout layout-align="center center">
+            <p class="center-align strong">Got a cool new product? publish it and get real users to test it.</p>
+        </div>
+        <div layout layout-align="center center">
+            <md-button class="btn btn-default" ng-click="dismissBanner()">
+                Get Started
+            </md-button>
+        </div>
+    </div>
+
+</div>
+
+<!-- WELCOME BANNER -->
+
+
+<!-- LOGIN DIALOG -->
 <md-dialog aria-label="Login dialog">
     <md-dialog-content>
         <md-button class="md-raised">
@@ -81,6 +114,8 @@
         <md-button ng-click="" class="md-primary">Close Dialog</md-button>
     </md-dialog-actions>
 </md-dialog>
+<!-- LOGIN DIALOG -->
+
 <script type="text/javascript" src="bundle.js"></script>
 </body>
 </html>
