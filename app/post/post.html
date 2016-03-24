@@ -1,1 +1,29 @@
-<h1>Hello posts</h1>
+<h1>New product</h1>
+
+<md-content>
+    <div>
+        <md-input-container>
+            <label>Name</label>
+            <input ng-model="product.name"/>
+        </md-input-container>
+    </div>
+    <div>
+        <md-input-container>
+            <label>Excerpt</label>
+            <input ng-model="product.excerpt"/>
+        </md-input-container>
+    </div>
+    <div>
+        <md-input-container>
+            <label>Description</label>
+            <input ng-model="product.description"/>
+        </md-input-container>
+    </div>
+    <div>
+        <md-input-container>
+            <label>Website</label>
+            <input ng-model="product.website"/>
+        </md-input-container>
+    </div>
+    <md-button class="btn-default" ng-click="submit()">Create</md-button>
+</md-content>

@@ -6,6 +6,7 @@
  * Time: 15:43
  */
 function ProductController($scope, $stateParams,$http) {
+    console.log($stateParams)
     $scope.product = {}
     $http.get(`api/product/${$stateParams.id}`).then(response=> {
         $scope.product = response.data
