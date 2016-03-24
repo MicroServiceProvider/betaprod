@@ -60,18 +60,21 @@
             </ul>
         </nav>
     </div>
+    <!-- LOGIN DIALOG -->
+    <md-dialog aria-label="Login dialog">
+        <md-dialog-content>
+            <md-button class="md-raised">
+                <md-icon md-svg-src="images/header/facebook.svg" aria-label="facebook-login"></md-icon>
+            </md-button>
+        </md-dialog-content>
+        <md-dialog-actions>
+            <md-button ng-click="" class="md-primary">Close Dialog</md-button>
+        </md-dialog-actions>
+    </md-dialog>
+    <!-- LOGIN DIALOG -->
+
 
 </md-toolbar>
-<div flex id="content">
-    <div class="container" ui-view>
-
-    </div>
-
-</div>
-<div class="footer">
-
-</div>
-
 <!-- WELCOME BANNER -->
 
 <div class="welcome-banner" ng-show="bannerShown" ng-controller="BannerController" flex layout layout-align="center center">
@@ -92,7 +95,7 @@
             <p class="center-align strong">Got a cool new product? publish it and get real users to test it.</p>
         </div>
         <div layout layout-align="center center">
-            <md-button class="btn btn-default" ng-click="dismissBanner()">
+            <md-button class="btn btn-default btn-product" ng-click="dismissBanner()">
                 Get Started
             </md-button>
         </div>
@@ -101,20 +104,21 @@
 </div>
 
 <!-- WELCOME BANNER -->
+<div flex id="content">
+    <div class="container" ui-view>
+
+    </div>
+
+</div>
+<div class="footer">
+    <div flex class="center-align">
+        <img class="responsive-img" ng-src="images/banner/logo_white.png">
+    </div>
+</div>
 
 
-<!-- LOGIN DIALOG -->
-<md-dialog aria-label="Login dialog">
-    <md-dialog-content>
-        <md-button class="md-raised">
-            <md-icon md-svg-src="images/header/facebook.svg" aria-label="facebook-login"></md-icon>
-        </md-button>
-    </md-dialog-content>
-    <md-dialog-actions>
-        <md-button ng-click="" class="md-primary">Close Dialog</md-button>
-    </md-dialog-actions>
-</md-dialog>
-<!-- LOGIN DIALOG -->
+
+
 
 <script type="text/javascript" src="bundle.js"></script>
 </body>
