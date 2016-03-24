@@ -3,10 +3,7 @@ function PostController($scope, $http, $state) {
 
     $scope.submit = function () {
         $http.post('/api/product', $scope.product).
-            then(p => {
-                console.log(p)
-                $state.go('product', {id: p.data.id})
-            })
+            then(p => $state.go('product', {id: p.data.id}))
     }
 }
 
