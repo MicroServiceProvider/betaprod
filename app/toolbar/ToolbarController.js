@@ -7,7 +7,8 @@
  */
 
 
-function ToolbarController($scope, $http, $mdDialog, $mdMedia) {
+// , $mdDialog, $mdMedia
+function ToolbarController($scope,$mdMedia,$mdDialog) {
 
     //EDIT Project
     $scope.login = function(){
@@ -23,7 +24,7 @@ function ToolbarController($scope, $http, $mdDialog, $mdMedia) {
         var useFullScreen = ($mdMedia('sm') || $mdMedia('xs')) && $scope.customFullscreen;
 
         $mdDialog.show({
-            controller: LoginDialogController,
+            controller: 'LoginDialogController',
             template: require('./loginDialog.html'),
             parent: angular.element(document.body),
             openFrom: event.currentTarget,
@@ -31,16 +32,18 @@ function ToolbarController($scope, $http, $mdDialog, $mdMedia) {
             clickOutsideToClose: true
         })
     }
-
-    function LoginDialogController($scope) {
-
-        $scope.closeDialog = function(){
-            $mdDialog.cancel();
-        }
-    };
-
 }
 
+function LoginDialogController($scope) {
+
+    $scope.closeDialog = function(){
+        $mdDialog.cancel();
+    }
+};
+
+// '$mdDialog', '$mdMedia',
+
 module.exports = function(app) {
-    app.controller('ToolbarController', ['$scope', '$http', '$mdDialog', '$mdMedia', ToolbarController])
+    app.controller('ToolbarController', ['$scope','$mdMedia','$mdDialog', ToolbarController])
+    app.controller('LoginDialogController',['$scope', LoginDialogController])
 }
