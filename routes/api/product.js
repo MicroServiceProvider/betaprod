@@ -21,7 +21,7 @@ if (process.env.NODE_ENV == 'production') {
     })
 }
 
-router.get('/:id', token.auth(), function(req, res) {
+router.get('/:id', function(req, res) {
     // TODO: should check if the user has permission for this product
     Product.get(req.params.id).then(function(product){
         res.json(product)
@@ -48,8 +48,8 @@ function saveProduct(imageUrl, req, res) {
 router.post('/', token.auth(), upload.single('file'), function(req, res) {
     if (process.env.NODE_ENV == 'production') {
         cloudinary.uploader.upload(req.file.path, result =>
-                saveProduct(cloudinary.url(result.public_id), req, res),
-            {width: 360, height: 400})
+                saveProduct(cloudinary.url(result.public_id,
+                    {width: 432, height: 325,  crop: 'pad'}), req, res))
     }
     else {
         saveProduct(`images/${req.file.filename}`,req, res)

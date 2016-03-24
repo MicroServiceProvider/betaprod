@@ -6,11 +6,18 @@
  * Time: 15:43
  */
 function ProductController($scope, $stateParams,$http) {
-    console.log($stateParams)
     $scope.product = {}
+    $scope.loading = true
     $http.get(`api/product/${$stateParams.id}`).then(response=> {
         $scope.product = response.data
-    }).catch(err=>{
+        $scope.fb_comments_url = `http://betaprod.co/product/${$scope.product.id}`
+
+        setImmediate(function() {
+            if (typeof FB !== 'undefined') {
+                FB.XFBML.parse()
+            }
+        })
+    }).catch(err=> {
         console.log(err)
     })
 }
