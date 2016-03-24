@@ -15,6 +15,7 @@ let app = angular.module('app', [router, material, animate, aria, messages])
 require('./feed/FeedController')(app)
 require('./post/PostController')(app)
 require('./product/ProductController')(app)
+require('./sidebar/SidebarController')(app)
 
 // Configure routes
 app.config(['$stateProvider', '$urlRouterProvider','$locationProvider',
