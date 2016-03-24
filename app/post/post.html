@@ -47,9 +47,7 @@
                 <div layout>
                     <md-input-container flex>
                         <input name="image" type="file" nv-file-select uploader="uploader" required="" accept=".jpg,.png,.gif"/>
-                        <div ng-messages="createProduct.image.$error">
-                            <div ng-message="required">This is required!</div>
-                        </div>
+                        <div ng-show="imageRequired">This is required!</div>
                     </md-input-container>
                 </div>
                 <div layout layout-align="center center">
