@@ -2,6 +2,8 @@ function PostController($scope, $http,  $state, FileUploader) {
     $scope.uploader = new FileUploader({ url: '/api/product'})
     $scope.product = {}
 
+    $scope.testers = 50;
+
     $scope.submit = function () {
 
         if ($scope.uploader.queue.length == 0) {
