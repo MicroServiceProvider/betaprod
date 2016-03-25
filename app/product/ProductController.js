@@ -24,7 +24,7 @@ function ProductController($rootScope, $scope, $stateParams,$http) {
 
 
 
-    $scope.user = [];
+    $scope.user = {};
 
     $http.get("/api/user").then(response => {
         $scope.user = response.data

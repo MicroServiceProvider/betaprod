@@ -1,5 +1,5 @@
 function HomeController($scope, $http) {
-    $scope.feeds = []
+    $scope.products = []
     $http.get('/api/feed').then(response => {
         $scope.products = response.data
     })
