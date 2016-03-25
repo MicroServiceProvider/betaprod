@@ -43,7 +43,7 @@ function getProduct(productId, res) {
             NotYet.filter({
                 productId: productId
             }).count().execute().then(notYetCount=> {
-                result.notyet = notYetCount
+                result.notYet = notYetCount
                 res.json(result)
             })
         })

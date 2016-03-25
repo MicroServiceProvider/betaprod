@@ -18,8 +18,6 @@ function ProductController($rootScope, $scope, $stateParams,$http) {
             }
         })
 
-
-
     }).catch(err=> {
         console.log(err)
     })
