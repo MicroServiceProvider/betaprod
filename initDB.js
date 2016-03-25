@@ -32,7 +32,8 @@ then(user =>
         'solum facilisis quaerendum ei, eos ei tollit suscipiantur.' +
         ' Cum prima aliquip iracundia ex. Quo ea ullum timeam sapientem.' +
         ' Justo iudicabit vituperatoribus id eam, odio congue minimum te quo.',
-        website:'http://betaprod.co'
+        website:'http://betaprod.co',
+        createdAt: (new Date).getTime()
     })).
 then(() => {
     console.log('all done')
