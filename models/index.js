@@ -31,4 +31,30 @@ Product.ensureIndex('createdAt')
 
 Product.belongsTo(User, 'user', 'userId', 'id')
 
-module.exports = {User, Product, r: thinky.r}
+const Launch = thinky.createModel('Launch', {
+    id: type.string(),
+    userId:type.string(),
+    productId:type.string()
+})
+
+Launch.ensureIndex('productId')
+
+Launch.ensureIndex('userId_productId', function(doc) {
+    return [doc('userId'), doc('productId')]
+})
+
+const NotYet = thinky.createModel('NotYet', {
+    id: type.string(),
+    userId:type.string(),
+    productId:type.string()
+})
+
+NotYet.ensureIndex('productId')
+
+NotYet.ensureIndex('userId_productId', function(doc) {
+    return [doc('userId'), doc('productId')]
+})
+
+
+
+module.exports = {User, Product, Launch,NotYet, r: thinky.r}
