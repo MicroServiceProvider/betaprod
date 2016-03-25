@@ -9,6 +9,9 @@
 
 function SidebarController($scope, $http) {
 
+
+
+
 }
 
 module.exports = function(app) {

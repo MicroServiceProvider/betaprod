@@ -2,10 +2,14 @@
 // This file contains styles that are specific to the feed page.
 // -----------------------------------------------------------------------------
 
-.grid{
+.grid, sidebar{
 
   padding-top: 40px;
   padding-bottom: 50px;
+
+  md-card {
+    margin-bottom: 20px;
+  }
 }
 .product-content {
   padding-left: 16px;

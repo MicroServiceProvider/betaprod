@@ -1,3 +1,4 @@
+<div layout>
 <div class="grid"  flex-sm="100" flex-gt-sm="80">
     <div ng-repeat="product in products">
 
@@ -25,6 +26,20 @@
 
 </div>
 
-<sidebar flex="20" show-gt-sm>
+<sidebar flex hide-sm ng-controller="SidebarController">
+    <md-card>
+        <md-card-content>
+           <div layout layout-align="center center">
+               <h6 class="center-align">
+                   Featured Products
+               </h6>
+           </div>
 
+            <div layout class="featured-product">
+
+            </div>
+
+        </md-card-content>
+    </md-card>
 </sidebar>
+</div>

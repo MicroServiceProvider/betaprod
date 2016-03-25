@@ -40,6 +40,22 @@
                         <md-icon md-font-set="material-icons"> live_help</md-icon>
                     </md-button>
                 </div>
+                <div layout layout-align="center center">
+                    <md-switch ng-model="isActive" aria-label="ApproveUsers">
+                        Manually approve testers
+                    </md-switch>
+                </div>
+                <div>
+                    <md-slider-container>
+                        <span>No. of Testers</span>
+                        <md-slider flex="" ng-model="color.green" min="0" max="1000" aria-label="green" id="testers" class="md-accent">
+                        </md-slider>
+                        <md-input-container>
+                            <input flex="" type="number" ng-model="color.green" aria-label="testers" aria-controls="testers">
+                        </md-input-container>
+                    </md-slider-container>
+                </div>
+
 
                 <div layout>
                     <label>Product Image</label>
