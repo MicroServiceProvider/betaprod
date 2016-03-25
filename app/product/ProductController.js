@@ -18,8 +18,7 @@ function ProductController($rootScope, $scope, $stateParams,$http) {
             }
         })
 
-        $scope.product.notYet = "96";
-        $scope.product.launch = "200";
+
 
     }).catch(err=> {
         console.log(err)
@@ -42,13 +41,13 @@ function ProductController($rootScope, $scope, $stateParams,$http) {
 
             if(vote == "notYet") {
 
-                $http.post("/notYet/"+product.id).then(response => {
+                $http.post("api/product/notyet/"+$scope.product.id).then(response => {
                     $scope.product = response.data
                 })
 
             } else if( vote == "launch") {
 
-                $http.post("/launch/"+product.id).then(response => {
+                $http.post("api/product/launch/"+$scope.product.id).then(response => {
                     $scope.product = response.data
                 })
 
