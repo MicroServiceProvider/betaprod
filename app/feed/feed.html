@@ -30,13 +30,16 @@
     <md-card>
         <md-card-content>
            <div layout layout-align="center center">
-               <h6 class="center-align">
+               <h6 class="center-align sidebar-title">
                    Featured Products
                </h6>
            </div>
 
-            <div layout class="featured-product">
-
+            <div layout class="featured-product" ng-repeat="product in featuredProducts">
+                <a href="/product/{{ product.id }}">
+                    <img class="featured-product-image responsive-img" ng-src="{{ product.imageUrl }}">
+                    <p class="featured-product-name center-align" >{{ product.name }}</p>
+                </a>
             </div>
 
         </md-card-content>
