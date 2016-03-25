@@ -1,5 +1,5 @@
 <div ng-show="loading" class="ng-hide">
-    <div class="container">
+    <div class="container single-product-div">
         <div class="container-slim">
             <div class="single-product">
 
@@ -35,6 +35,26 @@
                 </md-card>
 
 
+            </div>
+
+            <div class="voting-div">
+                <div layout layout-align="center center">
+                    <h4 class="center-align">Do you think this product is ready to launch?</h4>
+                </div>
+                <div layout flex="50" flex-offset="25">
+                    <p class="votes right-align" flex="25">{{ product.notYet }}</p>
+                    <div class="center-align" flex="25">
+                        <md-button class="btn btn-red" ng-click="vote('notYet')">
+                            Not Yet
+                        </md-button>
+                    </div>
+                    <div class="center-align" flex="25">
+                        <md-button class="btn btn-green" ng-click="vote('launch')">
+                           Yes
+                        </md-button>
+                    </div>
+                    <p class="votes" flex="25">{{ product.launch }}</p>
+                </div>
             </div>
 
             <div class="fb-comments"

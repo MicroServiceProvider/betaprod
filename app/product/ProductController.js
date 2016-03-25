@@ -5,7 +5,7 @@
  * Date: 22/03/2016
  * Time: 15:43
  */
-function ProductController($scope, $stateParams,$http) {
+function ProductController($rootScope, $scope, $stateParams,$http) {
     $scope.product = {}
     $scope.loading = true
     $http.get(`api/product/${$stateParams.id}`).then(response=> {
@@ -17,6 +17,10 @@ function ProductController($scope, $stateParams,$http) {
                 FB.XFBML.parse()
             }
         })
+
+        $scope.product.notYet = "96";
+        $scope.product.launch = "200";
+
     }).catch(err=> {
         console.log(err)
     })
@@ -28,8 +32,36 @@ function ProductController($scope, $stateParams,$http) {
     $http.get("/api/user").then(response => {
         $scope.user = response.data
     })
+
+
+    $scope.vote = function(vote) {
+
+        if(!$scope.user.id){
+            $rootScope.$broadcast("popLogin");
+        } else {
+
+            if(vote == "notYet") {
+
+                $http.post("/notYet/"+product.id).then(response => {
+                    $scope.product = response.data
+                })
+
+            } else if( vote == "launch") {
+
+                $http.post("/launch/"+product.id).then(response => {
+                    $scope.product = response.data
+                })
+
+            }
+
+        }
+
+    }
+
+
+
 }
 
 module.exports = function(app) {
-    app.controller('ProductController', ['$scope', '$stateParams','$http', ProductController])
+    app.controller('ProductController', ["$rootScope",'$scope', '$stateParams','$http', ProductController])
 }

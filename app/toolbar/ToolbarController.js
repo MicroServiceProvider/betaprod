@@ -7,7 +7,7 @@
  */
 
 
-function ToolbarController($scope, $http, $mdDialog, $mdMedia, $state ) {
+function ToolbarController($rootScope, $scope, $http, $mdDialog, $mdMedia, $state ) {
 
     //EDIT Project
     $scope.login = function(){
@@ -58,6 +58,15 @@ function ToolbarController($scope, $http, $mdDialog, $mdMedia, $state ) {
     }
 
 
+    //Listen to time change and reBootstrap the app
+    var unbindPopLogin = $rootScope.$on('popLogin', function (event) {
+        openLogintDialog();
+    });
+
+    //Unbinding from rootScope (see more at:"http://stackoverflow.com/questions/11252780/whats-the-correct-way-to-communicate-between-controllers-in-angularjs")
+    $scope.$on('$destroy', unbindPopLogin);
+
+
 }
 
 function LoginDialogController($scope) {
@@ -67,6 +76,6 @@ function LoginDialogController($scope) {
 };
 
 module.exports = function(app) {
-    app.controller('ToolbarController', ['$scope', '$http', '$mdDialog', '$mdMedia', '$state' , ToolbarController])
+    app.controller('ToolbarController', ['$rootScope', '$scope', '$http', '$mdDialog', '$mdMedia', '$state' , ToolbarController])
     app.controller('LoginDialogController',['$scope', LoginDialogController])
 }
