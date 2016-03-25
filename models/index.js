@@ -37,6 +37,7 @@ const Launch = thinky.createModel('Launch', {
     productId:type.string()
 })
 
+Product.hasMany(Launch, 'upvotes', 'id', 'productId')
 Launch.ensureIndex('productId')
 
 Launch.ensureIndex('userId_productId', function(doc) {
