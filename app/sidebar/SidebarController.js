@@ -9,7 +9,11 @@
 
 function SidebarController($scope, $http) {
 
+    $scope.featuredProducts = [];
 
+    $http.get('/api/feed/featured').then(response => {
+        $scope.featuredProducts = response.data
+    })
 
 
 }
