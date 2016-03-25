@@ -18,9 +18,6 @@ function ProductController($rootScope, $scope, $stateParams,$http) {
             }
         })
 
-        $scope.product.notYet = "96";
-        $scope.product.launch = "200";
-
     }).catch(err=> {
         console.log(err)
     })
