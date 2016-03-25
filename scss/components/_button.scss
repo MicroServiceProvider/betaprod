@@ -43,4 +43,28 @@
 
     background-color: $accent-green !important;
   }
+
+
+}
+
+.md-button.btn-green {
+  background-color: $green;
+  color: $white;
+
+  &:hover {
+
+    background-color: lighten($green,10) !important;
+  }
+}
+
+.md-button.btn-red {
+  background-color: $red;
+  color: $white;
+
+  &:hover {
+
+    background-color: lighten($red,10) !important;
+  }
+
+
 }
